@@ -41,7 +41,7 @@ print_icon_status() {
 	local status=$1
 	if [[ $status =~ (charged) || $status =~ (full) ]]; then
 		printf "$icon_status_charged"
-	elif [[ $status =~ (^charging) ]]; then
+	elif [[ $status =~ (^charging) || $status =~ (pending-charge) ]]; then
 		printf "$icon_status_charging"
 	elif [[ $status =~ (^discharging) ]]; then
 		printf "$icon_status_discharging"
